@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+@use "variables" as *;
+@use "mixin" as mixin;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+// 폰트 정리
+.noto-sans-kr{
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; 
+}
+.lobster {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+// 상단 배너 
+header{
+    padding: 3rem;
+    gap: 25px;
+    font-size: 1.5rem;
+    color: $bg-color;
+    background-color: $main-color;
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .banner{
+        @include mixin.desktop{
+                display: flex;
+                flex-direction: row;
+                gap: 50px;
+                align-items: center;
+            }
+        p{
+            @include mixin.desktop{
+            font-weight: 400;
+            font-size: 30px;
+            }
+        }
+        span{
+            font-size: 40px;
+        }
+        ul{
+            transition: 0.3s;
+            @include mixin.desktop{
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            }
+            li{
+                color: #bababa; 
+                &:hover{
+                filter: brightness(1.3);
+                }
+            }
+        }
+    }
+.button{    
+            font-size: 20px;
+            width: 200px;
+            border-radius: 6px;
+            text-align: center;
+            padding: 0.5rem 3rem;
+            background-color: #fff;
+            color: $main-color;
+            transition: 0.3s;
+        &:hover{
+            filter: brightness(0.7);
+        }
+        }
+        
+.txt{
+            p:nth-child(1){
+                font-weight: 800;
+                font-size: 3rem;
+                }
+            p:nth-child(2){
+                margin-top: 30px;
+                font-size: 20px ;
+                font-weight: 300;
+            }
+        }
+}
+.image{
+    display: none;
+    @include mixin.desktop{
+        display: flex;
+        position: absolute;
+        right: 200px;
+        top: 28px;
+    }
+}
+.two{
+    height: 1000px;
+    background-color: #D8DDFA;
+    p{
+        padding: 2rem 0 0 2rem;
+        &:nth-child(1){
+            text-align: center;
+            font-weight: 600;
+            font-size: 35px;
+        }
+        &:nth-child(2){
+            text-align: center;
+            font-weight: 300;
+            font-size: 28px;
+        }
+        
+    }
+.cas{
+    display: flex;
+    flex-direction: row;
+}        
+    .card,.card-2{
+        margin: 0 auto;
+        margin-top: 30px;
+        width: 300px;
+        height: 500px;
+        border-radius: 3rem;
+        padding: 2.5rem;
+        background-color: #fff;
+        div{
+            &:nth-child(1){
+                font-size: 30px;
+                color: #8091F0;
+            }
+        }
+    }
+}
+.card-2{
+    // padding: 2rem;
+    // margin: 0 auto;
+            display: none;
+            @include mixin.desktop{
+                display: block;
+                margin: 0 auto;
+            }
+        }
+.three{
+    height: 550px;
+    background-color: #fff;
+    .inner-card{
+    }
+}
+
+.four{
+    background-color: #8091F0;
+}
+.five{
+    padding: 0.5rem 2rem;
+    background-color: #dffffb;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    justify-content: center;
+    line-height: 40px; 
+    @include mixin.tablet{
+        height: 115px;
+    }
+    @include mixin.desktop{
+        height: 100px;
+    }
+    img{
+        width: 18vw;
+        height: 20vh;
+    }
+    p{
+        &:nth-child(1){
+            font-size: 20px;
+        }
+        &:nth-child(2){
+            color: #8091F0;
+            font-size: 40px;
+        }
+    }
+}
+footer{
+    background-color: #d1d1d1;
+    color: #000;
+    transition: 0.3s;
+    height: 140px;
+    font-size: 20px;
+    padding: 1rem;
+    text-align: justify;
+    ul{
+        li{
+        &:hover{
+        filter: brightness(1.2);
+            }
+        }
+    }
+}
